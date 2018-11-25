@@ -158,3 +158,19 @@ system.time(pred <- predict(classifier,
                             newdata=testNB))
 
 
+# Create a truth table by tabulating the predicted class 
+# labels with the actual class labels 
+table("Predictions"= pred,
+      "Actual" = df2.test$class)
+
+
+
+# Confusion matrix: ---------
+conf.mat <- confusionMatrix(pred, df2.test$class)
+
+conf.mat
+conf.mat$byClass
+conf.mat$overall
+conf.mat$overall["Accuracy"]
+
+

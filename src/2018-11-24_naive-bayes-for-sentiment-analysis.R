@@ -67,6 +67,14 @@ corpus.clean <-
 inspect(corpus.clean[1:3])
 
 
-# matrix representation of bag of words: 
+# matrix representation of bag of words: -------
+dtm <- DocumentTermMatrix(corpus.clean)
 
+inspect(dtm[1:5, 50:70])
+
+
+
+# partitioning the data: --------
+# Next, we create 75:25 partitions of the dataframe, corpus 
+# and document term matrix for training and testing purposes.
 
